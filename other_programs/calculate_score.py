@@ -36,13 +36,15 @@ def analyze(file_path):
         for i in range(n_lines):
             line = file.readline().strip()
             score = line.split()[-1]
-            scores[i] = score
             if score != '1':
                 wrong_sentences.append(line)
-    accuracy = round(scores.mean() * 100, 3)
-
+            try:
+                scores[i] = score
+            except:
+                scores[i] = 1
+    accuracy = round((scores.mean() * 100), 3)
     print(f'General score is' + Fore.GREEN + f' {accuracy} %\n')
-    sleep(0.7)
+    sleep(0.5)
     print(Fore.YELLOW + 'Wrong sentences:')
     for sentence in wrong_sentences:
         without_score = (' ').join(sentence.split()[:-1])
