@@ -6,3 +6,4 @@ for i in range(1, n):
         A[i], A[i - 1] = A[i - 1], A[i]
         i -= 1
 print(A)
+b
