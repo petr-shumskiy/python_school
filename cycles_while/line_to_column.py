@@ -1,5 +1,5 @@
 line = input()
 i = 0
-while len(line) > i:
+while n(line) > i:
     print(line[i])
     i += 1
