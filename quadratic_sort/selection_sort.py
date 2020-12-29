@@ -11,7 +11,8 @@ from Test import Test
 #         A[n - i - 1], A[idx_max] = A[idx_max], A[n - i - 1]
 #     return A
 
-def sort(A):
+def sort(arr):
+    A = arr.copy()
     n = len(A)
     for i in range(n):
         cm = 0

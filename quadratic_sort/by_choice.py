@@ -1,7 +1,8 @@
 from Test import Test
 
 
-def sort_by_choice(A):
+def sort_by_choice(arr):
+    A = arr.copy()
     n = len(A)
     for i in range(1, n):
         while A[i] < A[i - 1] and i > 0:
@@ -11,5 +12,4 @@ def sort_by_choice(A):
 
 
 tester = Test(sort_by_choice)
-
-tester.test()
+tester._show_preview()
