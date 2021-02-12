@@ -13,6 +13,7 @@
 # arr = ['vasya_2000', 'sasha_1998', 'lesha_2007']
 # arr2 = ['lg_$2000', 'samsung_$1900', 'xiaomi_$1777']
 # print(sorted(arr2, key=lambda x: x.split('_')[1]))
+from Test import Test
 arr = [1, 2, 3, 0, 1, 2, 0, 3, 0, 5, 3, 1, 8]
 # n = len(arr)
 
@@ -37,3 +38,18 @@ def counting_sort(A):
 
 res = counting_sort(arr)
 print(res)
+== == == =
+
+
+def sort_by_choice(arr):
+    A = arr.copy()
+    n = len(A)
+    for i in range(1, n):
+        while A[i] < A[i - 1] and i > 0:
+            A[i], A[i - 1] = A[i - 1], A[i]
+            i -= 1
+    return(A)
+
+
+tester = Test(sort_by_choice)
+tester._show_preview()
